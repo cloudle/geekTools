@@ -1,0 +1,11 @@
+- name: Setup essential softwares
+  hosts: all
+
+  tasks:
+    - name: Create sources directory
+      file:
+        path: "{{item}}"
+        state: directory
+      with_items:
+        - ~/sources
+        - ~/projects

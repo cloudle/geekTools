@@ -1,0 +1,6 @@
+---
+- name: Run all the local playbooks
+  hosts: local
+
+- import_playbook: ansible/essentials.yml
+- import_playbook: ansible/nodejs.yml
