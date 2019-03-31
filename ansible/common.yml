@@ -1,0 +1,28 @@
+- name: Setup common softwares
+  hosts: local
+
+  tasks:
+    - name: Install Google Chrome
+      shell: brew cask install google-chrome
+      args:
+        creates: "/Applications/Google Chrome.app"
+
+    - name: Install Dropbox
+      shell: brew cask install dropbox
+      args:
+        creates: "/Applications/Dropbox.app"
+
+    - name: Install Slack
+      shell: brew cask install slack
+      args:
+        creates: "/Applications/Slack.app"
+
+    - name: Install Visual Studio Code
+      shell: brew cask install visual-studio-code
+      args:
+        creates: "/Applications/Visual Studio Code.app"
+
+    - name: Clean up brew, remove any older versions from the cellar
+      shell: brew cleanup
+
+

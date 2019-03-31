@@ -1,0 +1,23 @@
+- name: Node.js
+  hosts: local
+
+  tasks:
+    - name: Download Nvm installation script
+      get_url:
+        url: https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh
+        dest: ~/Sources/nvmInstaller.sh
+    - name: Install Nvm
+      shell: "bash ~/Sources/nvmInstaller.sh"
+      args:
+        creates: ~/.nvm/nvm.sh
+    - name: Install Node.js version
+      shell: |
+        source ~/.nvm/nvm.sh
+        nvm install 8.11.3 && nvm alias default 8.11.3
+      args:
+        executable: /bin/zsh
+        creates: ~/.nvm/versions/node
+    - name: Install yarn
+      shell: brew install yarn --ignore-dependencies
+      args:
+        creates: /usr/local/bin/yarn

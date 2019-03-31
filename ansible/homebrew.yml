@@ -1,0 +1,18 @@
+- name: Setup essential softwares
+  hosts: local
+
+  tasks:
+    - name: Check if Homebrew is already installed
+      stat:
+        path: /usr/local/bin/brew
+      register: brew
+
+    - name: Install Homebrew
+      shell: |
+        yes | /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+      when: not brew.stat.exists
+
+    - name: Update brew formula, tap Caskroom/Cask from Github
+      shell: |
+        brew update
+        brew tap caskroom/cask

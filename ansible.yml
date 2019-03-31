@@ -2,5 +2,7 @@
 - name: Run all the local playbooks
   hosts: local
 
-- import_playbook: ansible/essentials.yml
+- import_playbook: ansible/homebrew.yml
+- import_playbook: ansible/essential.yml
 - import_playbook: ansible/nodejs.yml
+- import_playbook: ansible/common.yml

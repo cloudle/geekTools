@@ -1,5 +1,5 @@
 - name: Setup essential softwares
-  hosts: all
+  hosts: local
 
   tasks:
     - name: Create sources directory
@@ -7,5 +7,43 @@
         path: "{{item}}"
         state: directory
       with_items:
-        - ~/sources
-        - ~/projects
+        - ~/Sources
+        - ~/Projects
+
+    - name: Install iTerm2 (usin Brew)
+      shell: brew cask install iterm2
+      args:
+        creates: /Applications/iTerm.app
+    - name: Clone oh-my-zsh
+      git:
+        repo: https://github.com/robbyrussell/oh-my-zsh.git
+        dest: "~/Sources/oh-my-zsh"
+        update: no
+    - name: Install spaceship-operator-mono theme for Zsh
+      copy:
+        src: ./static/spaceship-operator-mono.zsh-theme
+        dest: ~/Sources/oh-my-zsh/custom/themes/spaceship-operator-mono.zsh-theme
+    - name: Install Auto suggestions plugin for Zsh
+      git:
+        repo: https://github.com/zsh-users/zsh-autosuggestions
+        dest: ~/Sources/oh-my-zsh/custom/plugins/zsh-autosuggestions
+    - name: Install Syntax highlighting plugin for Zsh
+      git:
+        repo: https://github.com/zsh-users/zsh-syntax-highlighting
+        dest: ~/Sources/oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+    - name: Install Nvm plugin for Zsh
+      git:
+        repo: https://github.com/lukechilds/zsh-nvm
+        dest: ~/Sources/oh-my-zsh/custom/plugins/zsh-nvm
+    - name: Create ~./oh-my-zsh symlink
+      file:
+        path: ~/.oh-my-zsh
+        src: ~/Sources/oh-my-zsh
+        state: link
+    - name: Copy .zshrc to user's Home
+      template:
+        src: ./static/.zshrc
+        dest: ~/.zshrc
+    - name: Set Zsh as the default shell!
+      become: true
+      user: name='{{ansible_user}}' shell=/bin/zsh
