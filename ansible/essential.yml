@@ -17,6 +17,16 @@
       with_items:
         - static/spaceship-operator-mono.zsh-theme
 
+    - name: Install git
+      shell: brew install git
+      args:
+        creates: /usr/local/Cellar/git/
+
+    - name: Install openssl
+      shell: brew install openssl
+      args:
+        creates: /usr/local/etc/openssl/
+
     - name: Install iTerm2 (usin Brew)
       shell: brew cask install iterm2
       args:

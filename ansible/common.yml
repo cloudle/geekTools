@@ -29,5 +29,3 @@
 
     - name: Clean up brew, remove any older versions from the cellar
       shell: brew cleanup
-
-
