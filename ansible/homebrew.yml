@@ -15,4 +15,4 @@
     - name: Update brew formula, tap Caskroom/Cask from Github
       shell: |
         brew update
-        brew tap caskroom/cask
+        # brew tap homebrew/cask-cask
