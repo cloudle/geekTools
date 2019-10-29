@@ -6,6 +6,7 @@
       shell: brew install watchman
       args:
         creates: /usr/local/bin/watchman
+
     - name: Check if react-native-cli exists
       shell: react-native --version
       register: rnVersion

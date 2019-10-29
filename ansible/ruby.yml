@@ -1,0 +1,27 @@
+- name: Ruby
+  hosts: local
+
+  tasks:
+    - name: Download Rvm installation script
+      get_url:
+        url: https://get.rvm.io
+        dest: ~/Sources/rvmInstaller.sh
+
+    - name: Install Rvm - stable version
+      shell: "bash ~/Sources/rvmInstaller.sh stable"
+      args:
+        creates: ~/.rvm/installed.at
+
+    - name: Install ruby@2.4.1 - under rvm management
+      shell: "~/.rvm/bin/rvm install 2.4.1"
+      args:
+        executable: /bin/zsh
+        creates: ~/.rvm/rubies/ruby-2.4.1/bin/ruby
+
+    - name: Use ruby@2.4.1 as default
+      shell: |
+        source ~/.rvm/scripts/rvm
+        rvm use --default 2.4.1
+        rvm rubygems current
+      args:
+        executable: /bin/zsh

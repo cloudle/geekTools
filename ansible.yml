@@ -4,6 +4,7 @@
 
 - import_playbook: ansible/homebrew.yml
 - import_playbook: ansible/essential.yml
+- import_playbook: ansible/ruby.yml
 - import_playbook: ansible/nodejs.yml
 - import_playbook: ansible/react-native.yml
 - import_playbook: ansible/common.yml
