@@ -45,3 +45,9 @@ List of tools that will be install by Ansible..
 - [x] Dropbox
 - [x] Slack
 - [x] Visual Studio Code 
+
+#### Other software that you may interest with (paid, not in scope of this Repo)k
+- [ ] Alfred (great alternative for Spotlight)
+- [ ] Magnet (smart arrange Application windows)
+- [ ] CleanMyMac
+- [ ] Commander One PRO
