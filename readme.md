@@ -52,3 +52,4 @@ List of tools that will be install by Ansible..
 - [ ] Magnet (smart arrange Application windows)
 - [ ] CleanMyMac
 - [ ] Commander One PRO
+- [ ] Spark, great email management tool
