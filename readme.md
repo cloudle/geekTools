@@ -21,6 +21,7 @@ List of tools that will be install by Ansible..
 #### Essentials tools
 - [x] Homebrew
 - [x] openssl
+- [x] Terraform (super lightweight DevOps resource automation)
 - [x] iTerm2 (using Brew)
 - [x] zsh (use as default shell), oh-my-zsh (~/Source/oh-my-zsh)
 - [x] spaceship-operator-mono theme for Zsh
