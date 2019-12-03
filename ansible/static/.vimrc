@@ -1,8 +1,28 @@
 packadd! onedark
 
-set guifont=Operator\ Mono\ 15
+set path+=** " allow :find command search stuff recursively
+set wildmenu " enable wildmenu, allow tab when search file with :find
+
+" UNLOCKED:
+" - :find file-name
+
+" Tweaks for file browsing
+let g:netrw_banner=0 " disable annoying banner
+let g:netrw_browse_split=4 " open in prior window
+let g:netrw_altv=1 " open splits to the right
+let g:netrw_liststyle=3 " tree view
+let g:netrw_list_hide=netrw_gitignore#Hide()
+let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
+
+" UNLOCKED:
+" - :edit a folder to open a file browser
+" - <CR>/v/t to open in an h-split/v-split/tab
+" - check |netrw-browse-maps| for more mappings
+
 set laststatus=2
 set noshowmode
+set hlsearch    " turn on search highlighting
+set incsearch   " highlight search during typing
 
 set autoindent
 set noexpandtab
@@ -16,10 +36,10 @@ set list
 let &t_ZH="\e[3m"
 let &t_ZR="\e[23m"
 
-let g:javascript_plugin_flow								= 1
-let g:javascript_conceal_function						= "ƒ"
-let g:javascript_conceal_null								= "ø"
-let g:javascript_conceal_undefined					= "¿"
+let g:javascript_plugin_flow                = 1
+let g:javascript_conceal_function           = "ƒ"
+let g:javascript_conceal_null               = "ø"
+let g:javascript_conceal_undefined          = "¿"
 set conceallevel=1
 
 let g:onedark_hide_endofbuffer=0
