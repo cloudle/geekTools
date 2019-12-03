@@ -49,6 +49,11 @@
         repo: https://github.com/airblade/vim-gitgutter
         dest: ~/.vim/pack/plugins/start/gitgutter
 
+    - name: Install colorizer plugin (hex color preview)
+      git:
+        repo: https://github.com/chrisbra/Colorizer
+        dest: ~/.vim/pack/plugins/start/colorizer
+
     - name: Install javascript highlighting
       git:
         repo: https://github.com/pangloss/vim-javascript
