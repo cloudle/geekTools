@@ -1,0 +1,66 @@
+- name: Advanced Vim customizations
+  hosts: local
+
+  tasks:
+    - name: Create directories
+      file:
+        path: "{{item}}"
+        state: directory
+      with_items:
+        - ~/.vim/autoload/lightline/colorscheme
+
+    - name: Install oneDark theme
+      git:
+        repo: https://github.com/joshdick/onedark.vim
+        dest: ~/.vim/pack/plugins/opt/onedark
+
+    - name: Install lightline plugin
+      git:
+        repo: https://github.com/itchyny/lightline.vim
+        dest: ~/.vim/pack/plugins/start/lightlin
+
+    - name: Install NERDtree plugin
+      git:
+        repo: https://github.com/scrooloose/nerdtree
+        dest: ~/.vim/pack/plugins/start/nerdtree
+
+    - name: oneDark style for lightline
+      template:
+        src: ~/.vim/pack/plugins/opt/onedark/autoload/lightline/colorscheme/onedark.vim
+        dest: ~/.vim/autoload/lightline/colorscheme/onedark.vim
+
+    - name: Install surround plugin
+      git:
+        repo: https://github.com/tpope/vim-surround
+        dest: ~/.vim/pack/plugins/start/surround
+
+    - name: Install auto-pairs plugin
+      git:
+        repo: https://github.com/jiangmiao/auto-pairs
+        dest: ~/.vim/pack/plugins/start/auto-pairs
+
+    - name: Install endwise plugin (auto if end for Ruby, Elixir, Python..)
+      git:
+        repo: https://github.com/tpope/vim-endwise.git
+        dest: ~/.vim/pack/plugins/start/endwise
+
+    - name: Install git-gutter plugin
+      git:
+        repo: https://github.com/airblade/vim-gitgutter
+        dest: ~/.vim/pack/plugins/start/gitgutter
+
+    - name: Install javascript highlighting
+      git:
+        repo: https://github.com/pangloss/vim-javascript
+        dest: ~/.vim/pack/plugins/start/syntax-javascript
+
+    - name: Install JSX highlighting
+      git:
+        repo: https://github.com/MaxMEllon/vim-jsx-pretty
+        dest: ~/.vim/pack/plugins/start/syntax-jsx
+
+    - name: Copy .vimrc to user's Home
+      template:
+        src: ./static/.vimrc
+        dest: ~/.vimrc
+        force: no

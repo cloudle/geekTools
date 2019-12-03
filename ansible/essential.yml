@@ -8,6 +8,7 @@
         state: directory
       with_items:
         - ~/Sources
+        - ~/Sources/theme
         - ~/Projects
 
     - name: Copy configuration files
@@ -31,6 +32,11 @@
       shell: brew cask install iterm2
       args:
         creates: /Applications/iTerm.app
+
+    - name: Deep Theme colors for iTerm
+      template:
+        src: ./static/geek.itermcolors
+        dest: ~/Sources/theme/geek.itermcolors
 
     - name: Clone oh-my-zsh
       git:
@@ -68,6 +74,7 @@
       template:
         src: ./static/.zshrc
         dest: ~/.zshrc
+        force: no
 
     - name: Set Zsh as the default shell!
       become: true
