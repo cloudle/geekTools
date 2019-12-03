@@ -28,6 +28,11 @@
       args:
         creates: /usr/local/etc/openssl/
 
+    - name: Install Terraform
+      shell: brew install terraform
+      args:
+        creates: /usr/local/bin/terraform
+
     - name: Install iTerm2 (using Brew)
       shell: brew cask install iterm2
       args:
