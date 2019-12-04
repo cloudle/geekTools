@@ -13,3 +13,8 @@
 
     - set_fact: ansible_user="{{username_result.stdout}}"
     - set_fact: ansible_become_pass="{{vars_password}}"
+
+    - name: Check sudo password
+      command: echo "sudo password correct"
+      changed_when: false
+      become: true
