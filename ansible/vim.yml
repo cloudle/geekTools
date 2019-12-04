@@ -24,6 +24,16 @@
         repo: https://github.com/scrooloose/nerdtree
         dest: ~/.vim/pack/plugins/start/nerdtree
 
+    - name: HomeBrew; Install the silver searcher (ag)
+      shell: brew install the_silver_searcher
+      args:
+        creates: /usr/local/bin/ag
+
+    - name: Install CtrlP plugin
+      git:
+        repo: https://github.com/kien/ctrlp.vim
+        dest: ~/.vim/pack/plugins/start/ctrlp
+
     - name: oneDark style for lightline
       template:
         src: ~/.vim/pack/plugins/opt/onedark/autoload/lightline/colorscheme/onedark.vim
