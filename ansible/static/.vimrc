@@ -6,6 +6,11 @@ set wildmenu " enable wildmenu, allow tab when search file with :find
 " UNLOCKED:
 " - :find file-name
 
+let g:ctrlp_match_window = 'bottom,order:btt'
+let g:ctrlp_switch_buffer = 0
+let g:ctrlp_working_path_mode = 0
+let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
+
 " Tweaks for file browsing
 let g:netrw_banner=0 " disable annoying banner
 let g:netrw_browse_split=4 " open in prior window
@@ -32,6 +37,9 @@ set mouse=a
 set number
 set listchars=tab:!·,space:·,trail:·
 set list
+set cursorline
+set showmatch
+set foldenable
 
 let &t_ZH="\e[3m"
 let &t_ZR="\e[23m"
@@ -57,7 +65,8 @@ if (has("autocmd"))
 		autocmd!
 		" Make `Function`s bold in GUI mode
 		autocmd ColorScheme * call onedark#extend_highlight("Function", { "gui": "italic", "cterm": "italic", "fg": { "cterm": 173  } })
-		autocmd ColorScheme * call onedark#extend_highlight("javascriptObjectLabel", { "fg": { "cterm": 173  } })
+		autocmd ColorScheme * call onedark#extend_highlight("Conceal", { "gui": "bold", "fg": { "gui": "#C678DD" } })
+		autocmd ColorScheme * call onedark#extend_highlight("jsFunction", { "gui": "italic" })
 	augroup END
 endif
 
