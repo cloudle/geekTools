@@ -8,6 +8,22 @@
         state: directory
       with_items:
         - ~/.vim/autoload/lightline/colorscheme
+        - ~/.config/nvim
+
+    - name: HomeBrew; Install NeoVim.. better performance?
+      shell: brew install neovim
+      args:
+        creates: /usr/local/bin/nvim
+
+    - name: Use Vim configure for NeoVim
+      template:
+        src: ./static/init.vim
+        dest: ~/.config/nvim/init.vim
+
+    - name: HomeBrew; Install the silver searcher (ag)
+      shell: brew install the_silver_searcher
+      args:
+        creates: /usr/local/bin/ag
 
     - name: Install oneDark theme
       git:
@@ -23,11 +39,6 @@
       git:
         repo: https://github.com/scrooloose/nerdtree
         dest: ~/.vim/pack/plugins/start/nerdtree
-
-    - name: HomeBrew; Install the silver searcher (ag)
-      shell: brew install the_silver_searcher
-      args:
-        creates: /usr/local/bin/ag
 
     - name: Install CtrlP plugin
       git:
