@@ -35,6 +35,11 @@
         repo: https://github.com/itchyny/lightline.vim
         dest: ~/.vim/pack/plugins/start/lightlin
 
+    - name: Install fugitive (Git integration) plugin
+      git:
+        repo: https://github.com/tpope/vim-fugitive
+        dest: ~/.vim/pack/plugins/start/fugitive
+
     - name: Install NERDtree plugin
       git:
         repo: https://github.com/scrooloose/nerdtree
@@ -44,6 +49,11 @@
       git:
         repo: https://github.com/kien/ctrlp.vim
         dest: ~/.vim/pack/plugins/start/ctrlp
+
+    - name: Install syntastic plugin
+      git:
+        repo: https://github.com/vim-syntastic/syntastic
+        dest: ~/.vim/pack/plugins/start/syntastic
 
     - name: oneDark style for lightline
       template:
