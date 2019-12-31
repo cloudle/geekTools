@@ -15,7 +15,7 @@
     - name: Install Node.js version
       shell: |
         source ~/.nvm/nvm.sh
-        nvm install 8.11.3 && nvm alias default 8.11.3
+        nvm install 12.14.0 && nvm alias default 12.14.0
       args:
         executable: /bin/zsh
         creates: ~/.nvm/versions/node

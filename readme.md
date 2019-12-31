@@ -20,6 +20,7 @@ List of tools that will be install by Ansible..
 
 #### Essentials tools
 - [x] Homebrew
+- [x] Git
 - [x] openssl
 - [x] Terraform (super lightweight DevOps resource automation)
 - [x] iTerm2 (using Brew)
@@ -31,7 +32,7 @@ List of tools that will be install by Ansible..
 - [x] rvm (ruby version manager)
 - [x] ruby@2.4.1 (using `rvm`)
 - [x] nvm (node version manager)
-- [x] nodejs@8.11.3 (using `nvm`)
+- [x] nodejs@12.14.0 (using `nvm`)
 - [x] yarn (yet another node.js package manager)
 
 #### React Native tools
