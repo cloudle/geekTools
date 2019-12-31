@@ -37,7 +37,7 @@ List of tools that will be install by Ansible..
 
 #### React Native tools
 - [x] watchman
-- [x] react-native-cli
+- [ ] react-native-cli
 - [x] ruui-cli (react based universal App development tool)
 - [ ] CocoaPods, we'll need to run `pod install cocoapods` on our own (it take too long time to run, so I don't think we want to have it installed by Ansible)
 - [ ] OpenJdk, run `brew tap AdoptOpenJDK/openjdk` and then `brew cask install adoptopenjdk8`
