@@ -44,7 +44,6 @@ List of tools that will be install by Ansible..
 
 #### Common software
 - [x] Chrome
-- [x] GoTiengViet (for Vietnamese input)
 - [x] Dropbox
 - [x] Slack
 - [x] Visual Studio Code 

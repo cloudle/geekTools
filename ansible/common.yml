@@ -7,11 +7,6 @@
       args:
         creates: "/Applications/Google Chrome.app"
 
-    - name: Install GoTiengViet (for Vietnamese input)
-      shell: brew cask install gotiengviet
-      args:
-        creates: "/Applications/GoTiengViet.app"
-
     - name: Install Dropbox
       shell: brew cask install dropbox
       args:
